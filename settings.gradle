@@ -1,0 +1,3 @@
+rootProject.name='FineMenu'
+include ':app'
+include ':finemenuexample'
