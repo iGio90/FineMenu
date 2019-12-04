@@ -50,8 +50,6 @@ new FineMenu()
         .injectTo(menuContainer);
 ```
 
-![screenshot1](https://i.ibb.co/T1cb3df/Screenshot-1575415753.png)
-![screenshot2](https://i.ibb.co/B2bJjGv/Screenshot-1575415759.png)
-
+![](https://media.giphy.com/media/ju0nHzCPuKov83MgOM/giphy.gif)
 
 Checkout [here](https://github.com/iGio90/FineMenu/blob/master/finemenuexample/src/main/java/com/igio90/finemenuexample/MainActivity.java) the complete example from the screenshots above.
