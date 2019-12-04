@@ -21,6 +21,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,6 +101,8 @@ public class FineMenu {
                     if (fineMenuButton.mLabelColor != null) {
                         label.setTextColor(fineMenuButton.mLabelColor);
                     }
+
+                    label.setTextSize(TypedValue.COMPLEX_UNIT_SP, fineMenuButton.mLabelSize);
 
                     fineMenuButton.mButtonLabel = label;
                 }
@@ -207,6 +210,7 @@ public class FineMenu {
                             button.mButtonLabel.setTypeface(null, Typeface.BOLD);
                         }
 
+                        button.mButtonLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, button.mSelectedLabelSize);
                         button.mButtonLabel.setAlpha(1f);
                     }
                     if (button.mIndicator != null) {
@@ -224,6 +228,7 @@ public class FineMenu {
                             button.mButtonLabel.setTypeface(null, Typeface.NORMAL);
                         }
 
+                        button.mButtonLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, button.mLabelSize);
                         button.mButtonLabel.setAlpha(mUnselectedAlpha);
                     }
                     if (button.mIndicator != null) {
@@ -260,6 +265,8 @@ public class FineMenu {
         private Integer mIndicatorColor = null;
 
         private Pair<Integer, Integer> mIconSize = null;
+        private Integer mLabelSize = 14;
+        private Integer mSelectedLabelSize = 14;
 
         public FineMenuButton withLabel(String label) {
             mLabel = label;
@@ -303,6 +310,16 @@ public class FineMenu {
 
         public FineMenuButton withIconSize(int widthDp, int heightDp) {
             mIconSize = new Pair<>(widthDp, heightDp);
+            return this;
+        }
+
+        public FineMenuButton withLabelSize(int sizeSp) {
+            mLabelSize = sizeSp;
+            return this;
+        }
+
+        public FineMenuButton withSelectedLabelSize(int selectedLabelSizeSp) {
+            mSelectedLabelSize = selectedLabelSizeSp;
             return this;
         }
     }
