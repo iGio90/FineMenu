@@ -8,6 +8,8 @@ I recently had to build some Applications designed by different UI designers wit
 
 ![](https://media.giphy.com/media/ju0nHzCPuKov83MgOM/giphy.gif)
 
+### Setup
+
 ```
 allprojects {
 		repositories {
@@ -22,6 +24,8 @@ dependencies {
         implementation 'com.github.iGio90:FineMenu:+'
 }
 ```
+
+### Sample code
 
 ```java
 new FineMenu()
