@@ -6,6 +6,7 @@ A simple, clean and styleable menù/tabs for Android
 
 I recently had to build some Applications designed by different UI designers with some common things which I converted into this library.
 
+![](https://media.giphy.com/media/ju0nHzCPuKov83MgOM/giphy.gif)
 
 ```
 allprojects {
@@ -49,7 +50,5 @@ new FineMenu()
         .withUnselectedAlpha(.3f)
         .injectTo(menuContainer);
 ```
-
-![](https://media.giphy.com/media/ju0nHzCPuKov83MgOM/giphy.gif)
 
 Checkout [here](https://github.com/iGio90/FineMenu/blob/master/finemenuexample/src/main/java/com/igio90/finemenuexample/MainActivity.java) the complete example from the screenshots above.
