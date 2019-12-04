@@ -6,7 +6,7 @@ A simple, clean and styleable menù/tabs for Android
 
 I recently had to build some Applications designed by different UI designers with some common things which I converted into this library.
 
-![](https://media.giphy.com/media/ju0nHzCPuKov83MgOM/giphy.gif)
+![](https://media.giphy.com/media/YlAho8rZB0axdtUW3B/giphy.gif)
 
 ### Setup
 
@@ -28,18 +28,32 @@ dependencies {
 ### Sample code
 
 ```java
+FrameLayout menuContainer = findViewById(R.id.bottom_menu_container_2);
+int buttonsBgColor = Color.parseColor("#2a2a2a");
 new FineMenu()
         .withViewPager(mPager)
         .withButtons(
                 new FineMenu.FineMenuButton()
                         .withLabel("label 1")
                         .withLabelColor(Color.WHITE)
+                        .withLabelSize(12)
+                        .withSelectedLabelSize(14)
                         .withSVGIcon("icon.svg")
                         .withIconSize(24, 24)
                         .withBackgroundColor(buttonsBgColor),
                 new FineMenu.FineMenuButton()
                         .withLabel("label 2")
                         .withLabelColor(Color.WHITE)
+                        .withLabelSize(12)
+                        .withSelectedLabelSize(14)
+                        .withSVGIcon("icon.svg")
+                        .withIconSize(24, 24)
+                        .withBackgroundColor(buttonsBgColor),
+                new FineMenu.FineMenuButton()
+                        .withLabel("label 3")
+                        .withLabelColor(Color.WHITE)
+                        .withLabelSize(12)
+                        .withSelectedLabelSize(14)
                         .withSVGIcon("icon.svg")
                         .withIconSize(24, 24)
                         .withBackgroundColor(buttonsBgColor)
