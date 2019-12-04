@@ -18,7 +18,7 @@ allprojects {
 
 ```
 dependencies {
-        implementation 'com.github.iGio90:FineMenu:1.0'
+        implementation 'com.github.iGio90:FineMenu:+'
 }
 ```
 
