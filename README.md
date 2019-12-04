@@ -50,5 +50,11 @@ new FineMenu()
         .withUnselectedAlpha(.3f)
         .injectTo(menuContainer);
 ```
+----
+
+Please open an issue to request specific usage case features
+
+----
+
 
 Checkout [here](https://github.com/iGio90/FineMenu/blob/master/finemenuexample/src/main/java/com/igio90/finemenuexample/MainActivity.java) the complete example from the screenshots above.
