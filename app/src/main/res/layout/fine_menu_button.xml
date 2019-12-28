@@ -45,6 +45,8 @@
                 android:id="@+id/fine_menu_button_indicator"
                 android:visibility="gone"
                 android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_width="32dp"
                 android:layout_height="3dp" />
     </LinearLayout>

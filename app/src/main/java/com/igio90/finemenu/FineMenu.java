@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,6 +44,7 @@ public class FineMenu {
     private OnMenuButtonClickListener mOnMenuClickListener;
 
     private boolean mSelectedBold = true;
+    private boolean mWrapWithScrollView = false;
     private float mUnselectedAlpha = .3f;
 
     public FineMenu withButtons(FineMenuButton... buttons) {
@@ -65,6 +67,11 @@ public class FineMenu {
         return this;
     }
 
+    public FineMenu withWrapWithScrollView(boolean wrapWithScrollView) {
+        mWrapWithScrollView = wrapWithScrollView;
+        return this;
+    }
+
     public FineMenu withUnselectedAlpha(float alpha) {
         if (alpha > 1f || alpha < 0f) {
             alpha = 1f;
@@ -79,14 +86,22 @@ public class FineMenu {
         final Context context = parent.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
 
-        LinearLayout menuContainer = new LinearLayout(context);
-        menuContainer.setOrientation(LinearLayout.HORIZONTAL);
+        LinearLayout menuContainer;
+        View root;
+        if (mWrapWithScrollView) {
+            root = inflater.inflate(R.layout.fine_menu_scroll_container, parent, false);
+            menuContainer = root.findViewById(R.id.fine_menu_button_container);
+        } else {
+            menuContainer = (LinearLayout)
+                    inflater.inflate(R.layout.fine_menu_buttons_container, parent, false);
+            root = menuContainer;
+        }
 
         if (mButtons != null) {
             for (int i = 0; i < mButtons.length; i++) {
                 FineMenuButton fineMenuButton = mButtons[i];
 
-                FrameLayout button = (FrameLayout) inflater.inflate(R.layout.button, menuContainer, false);
+                FrameLayout button = (FrameLayout) inflater.inflate(R.layout.fine_menu_button, menuContainer, false);
                 View buttonContainer = button.findViewById(R.id.fine_menu_button_container);
                 FrameLayout iconContainer = button.findViewById(R.id.fine_menu_button_icon_container);
 
@@ -100,6 +115,10 @@ public class FineMenu {
 
                     if (fineMenuButton.mLabelColor != null) {
                         label.setTextColor(fineMenuButton.mLabelColor);
+                    }
+
+                    if (fineMenuButton.mTypeface != null) {
+                        label.setTypeface(fineMenuButton.mTypeface);
                     }
 
                     label.setTextSize(TypedValue.COMPLEX_UNIT_SP, fineMenuButton.mLabelSize);
@@ -164,9 +183,11 @@ public class FineMenu {
                 public void onPageScrollStateChanged(int state) {}
             });
         }
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        parent.addView(menuContainer, params);
+        parent.addView(root, params);
 
         setButtonSelected(0);
     }
@@ -268,6 +289,8 @@ public class FineMenu {
         private Integer mLabelSize = 14;
         private Integer mSelectedLabelSize = 14;
 
+        private Typeface mTypeface;
+
         public FineMenuButton withLabel(String label) {
             mLabel = label;
             return this;
@@ -320,6 +343,11 @@ public class FineMenu {
 
         public FineMenuButton withSelectedLabelSize(int selectedLabelSizeSp) {
             mSelectedLabelSize = selectedLabelSizeSp;
+            return this;
+        }
+
+        public FineMenuButton withTypeface(Typeface typeface) {
+            mTypeface = typeface;
             return this;
         }
     }

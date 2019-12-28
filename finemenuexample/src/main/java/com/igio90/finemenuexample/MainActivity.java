@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -54,10 +55,6 @@ public class MainActivity extends AppCompatActivity {
                         new FineMenu.FineMenuButton()
                                 .withLabel("label 2")
                                 .withIndicatorColor(Color.BLACK)
-                                .withLabelColor(Color.BLACK),
-                        new FineMenu.FineMenuButton()
-                                .withLabel("label 3")
-                                .withIndicatorColor(Color.BLACK)
                                 .withLabelColor(Color.BLACK)
                 )
                 .withSelectedBold(true)
@@ -78,14 +75,35 @@ public class MainActivity extends AppCompatActivity {
                         new FineMenu.FineMenuButton()
                                 .withLabel("label 2")
                                 .withSelectedLabelSize(16)
-                                .withLabelColor(Color.BLUE)
+                                .withLabelColor(Color.GREEN)
+                                .withIndicatorColor(Color.MAGENTA),
+                        new FineMenu.FineMenuButton()
+                                .withLabel("label 2")
+                                .withSelectedLabelSize(16)
+                                .withLabelColor(Color.YELLOW)
                                 .withIndicatorColor(Color.DKGRAY),
                         new FineMenu.FineMenuButton()
                                 .withLabel("label 3")
+                                .withSelectedLabelSize(16)
+                                .withLabelColor(Color.RED)
+                                .withIndicatorColor(Color.GREEN),
+                        new FineMenu.FineMenuButton()
+                                .withLabel("label 4")
+                                .withSelectedLabelSize(16)
+                                .withLabelColor(Color.MAGENTA)
+                                .withIndicatorColor(Color.RED),
+                        new FineMenu.FineMenuButton()
+                                .withLabel("label 5")
+                                .withSelectedLabelSize(16)
+                                .withLabelColor(Color.GREEN)
+                                .withIndicatorColor(Color.YELLOW),
+                        new FineMenu.FineMenuButton()
+                                .withLabel("label 6")
                                 .withSelectedLabelSize(20)
                                 .withLabelColor(Color.DKGRAY)
                                 .withIndicatorColor(Color.RED)
                 )
+                .withWrapWithScrollView(true)
                 .withSelectedBold(true)
                 .withUnselectedAlpha(1f)
                 .injectTo(menuContainer);
@@ -137,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                                 .withLabelSize(12)
                                 .withSelectedLabelSize(14)
                                 .withSVGIcon("icon.svg")
+                                .withTypeface(Typeface.DEFAULT)
                                 .withIconSize(24, 24)
                                 .withBackgroundColor(buttonsBgColor),
                         new FineMenu.FineMenuButton()
@@ -145,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                                 .withLabelSize(12)
                                 .withSelectedLabelSize(14)
                                 .withSVGIcon("icon.svg")
+                                .withTypeface(Typeface.DEFAULT)
                                 .withIconSize(24, 24)
                                 .withBackgroundColor(buttonsBgColor),
                         new FineMenu.FineMenuButton()
@@ -153,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                                 .withLabelSize(12)
                                 .withSelectedLabelSize(14)
                                 .withSVGIcon("icon.svg")
+                                .withTypeface(Typeface.DEFAULT)
                                 .withIconSize(24, 24)
                                 .withBackgroundColor(buttonsBgColor)
                 )
