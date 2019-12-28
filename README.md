@@ -6,7 +6,7 @@ A simple, clean and styleable menù/tabs for Android
 
 I recently had to build some Applications designed by different UI designers with some common things which I converted into this library.
 
-![](https://media.giphy.com/media/YlAho8rZB0axdtUW3B/giphy.gif)
+![](https://media.giphy.com/media/ZEGqgH933XQvltJUHg/giphy.gif)
 
 ### Setup
 

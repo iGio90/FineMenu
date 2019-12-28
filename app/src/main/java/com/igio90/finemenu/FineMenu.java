@@ -87,7 +87,7 @@ public class FineMenu {
         final LayoutInflater inflater = LayoutInflater.from(context);
 
         LinearLayout menuContainer;
-        View root;
+        final View root;
         if (mWrapWithScrollView) {
             root = inflater.inflate(R.layout.fine_menu_scroll_container, parent, false);
             menuContainer = root.findViewById(R.id.fine_menu_button_container);
@@ -178,6 +178,12 @@ public class FineMenu {
                 @Override
                 public void onPageSelected(int position) {
                     setButtonSelected(position);
+                    if (root instanceof HorizontalScrollView) {
+                        ViewGroup container = (ViewGroup) ((HorizontalScrollView) root)
+                                .getChildAt(0);
+                        ((HorizontalScrollView) root).smoothScrollTo(
+                                container.getChildAt(position).getLeft(), 0);
+                    }
                 }
                 @Override
                 public void onPageScrollStateChanged(int state) {}

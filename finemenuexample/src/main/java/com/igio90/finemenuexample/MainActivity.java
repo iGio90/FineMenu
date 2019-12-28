@@ -78,22 +78,22 @@ public class MainActivity extends AppCompatActivity {
                                 .withLabelColor(Color.GREEN)
                                 .withIndicatorColor(Color.MAGENTA),
                         new FineMenu.FineMenuButton()
-                                .withLabel("label 2")
-                                .withSelectedLabelSize(16)
-                                .withLabelColor(Color.YELLOW)
-                                .withIndicatorColor(Color.DKGRAY),
-                        new FineMenu.FineMenuButton()
                                 .withLabel("label 3")
+                                .withSelectedLabelSize(16)
+                                .withLabelColor(Color.DKGRAY)
+                                .withIndicatorColor(Color.YELLOW),
+                        new FineMenu.FineMenuButton()
+                                .withLabel("label 4")
                                 .withSelectedLabelSize(16)
                                 .withLabelColor(Color.RED)
                                 .withIndicatorColor(Color.GREEN),
                         new FineMenu.FineMenuButton()
-                                .withLabel("label 4")
+                                .withLabel("label 5")
                                 .withSelectedLabelSize(16)
                                 .withLabelColor(Color.MAGENTA)
                                 .withIndicatorColor(Color.RED),
                         new FineMenu.FineMenuButton()
-                                .withLabel("label 5")
+                                .withLabel("label 6")
                                 .withSelectedLabelSize(16)
                                 .withLabelColor(Color.GREEN)
                                 .withIndicatorColor(Color.YELLOW),

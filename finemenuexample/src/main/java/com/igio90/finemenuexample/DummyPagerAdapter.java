@@ -40,7 +40,7 @@ public class DummyPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 10;
     }
 
     public static class DummyFragment extends Fragment {

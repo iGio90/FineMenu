@@ -16,6 +16,8 @@
 !-->
 <HorizontalScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:overScrollMode="never"
+        android:scrollbarSize="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <include
