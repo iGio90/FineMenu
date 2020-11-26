@@ -1,6 +1,6 @@
 ## FineMenu
 
-A simple, clean and styleable menù/tabs for Android
+A simple, clean and styleable menù/tabs for Android, linkable with viewPager or custom behaviors
 
 --------
 
