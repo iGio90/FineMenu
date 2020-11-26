@@ -15,6 +15,7 @@
 */
 package com.igio90.finemenu;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
@@ -198,9 +199,16 @@ public class FineMenu {
         setButtonSelected(0);
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private Drawable loadIndicatorDrawableColored(Context context, int color) {
-        Drawable indicatorDrawable = context.getResources().getDrawable(
-                R.drawable.finemenu_indicator, context.getTheme());
+        Drawable indicatorDrawable;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            indicatorDrawable = context.getResources().getDrawable(
+                    R.drawable.finemenu_indicator, context.getTheme());
+        } else {
+            indicatorDrawable = context.getResources().getDrawable(
+                    R.drawable.finemenu_indicator);
+        }
         Drawable wrapped = indicatorDrawable.mutate();
         wrapped = DrawableCompat.wrap(wrapped);
         DrawableCompat.setTint(wrapped, color);
