@@ -131,6 +131,11 @@ public class FineMenu {
                     buttonContainer.setBackgroundColor(fineMenuButton.mBackgroundColor);
                 }
 
+                if (fineMenuButton.mPadding >= 0) {
+                    int padding = (int) dpToPx(fineMenuButton.mPadding, context);
+                    buttonContainer.setPadding(padding, padding, padding, padding);
+                }
+
                 ImageView icon = null;
                 if (fineMenuButton.mIconResource != null) {
                     icon = new ImageView(context);
@@ -303,6 +308,8 @@ public class FineMenu {
         private Integer mLabelSize = 14;
         private Integer mSelectedLabelSize = 14;
 
+        private Integer mPadding = -1;
+
         private Typeface mTypeface;
 
         public FineMenuButton withLabel(String label) {
@@ -362,6 +369,11 @@ public class FineMenu {
 
         public FineMenuButton withTypeface(Typeface typeface) {
             mTypeface = typeface;
+            return this;
+        }
+
+        public FineMenuButton withPaddingDp(int paddingDp) {
+            mPadding = paddingDp;
             return this;
         }
     }
